@@ -1,5 +1,7 @@
 import dotenv from "dotenv"
-dotenv.config()
+dotenv.config({
+    path: './.env'
+})
 import connectDB from "./db/index.js"
 import app from "./app.js"
 import dns from "dns"
@@ -18,5 +20,3 @@ connectDB()
 .catch((error) => {
     console.log("mongodb connection failed !!!")
 })
-
-
