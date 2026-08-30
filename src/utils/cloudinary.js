@@ -30,4 +30,17 @@ const uploadFile = async (fileLocalPath) => {
     
 }
 
-export default uploadFile
+
+const deleteFile = async function(filePublicId){
+    try {
+        if(!filePublicId) return null
+
+        return await cloudinary.uploader.destroy(filePublicId)
+        
+    } catch (error) {
+        console.log("failed to delete file")
+        return null
+    }
+}
+
+export {uploadFile, deleteFile}
